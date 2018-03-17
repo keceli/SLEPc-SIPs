@@ -6,4 +6,4 @@ SIPs is a parallel sparse eigensolver for real and symmetric generalized eigenva
 [DOI=10.1007/s11075-012-9564-z](doi.org/10.1007/s11075-012-9564-z)
 3. Keçeli, M.; Zhang, H.; Zapol, P.; Dixon, D. A.; Wagner, A. F. Shift-and-Invert Parallel Spectral Transformation Eigensolver: Massively Parallel Performance for Density-Functional Based Tight-Binding. J. Comput. Chem. 2016, 37, 448–459.
 [DOI=10.1002/jcc.24254](doi.org/10.1002/jcc.24254)
-4.Keçeli M.; Corsetti F.; Campos C.; Roman J.; Vâzquez-Mayagoitia A;  Zhang, H.; Zapol, P.; & Wagner A, F. SIESTA-SIPs: Massively parallel spectrum-slicing eigensolver for an ab initio molecular dynamics package. 2018
+4. Keçeli M.; Corsetti F.; Campos C.; Roman J.; Vâzquez-Mayagoitia A;  Zhang, H.; Zapol, P.; & Wagner A, F. SIESTA-SIPs: Massively parallel spectrum-slicing eigensolver for an ab initio molecular dynamics package. 2018
