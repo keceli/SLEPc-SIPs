@@ -1,6 +1,6 @@
 SIPs is a parallel sparse eigensolver for real and symmetric generalized eigenvalue problems. 
 Motivated by quantum chemistry and material science applications, where a large portion of eigensolutions are required, SIPs was initially developed in 2007.<sup>1</sup> 
-Built on top of [PETSc](https://www.mcs.anl.gov/petsc/) and [SLEPc](http://slepc.upv.es/) libraries, SIPs solves the eigenvalue problem with distributed spectrum slicing method. 
+SIPs solves the eigenvalue problem with distributed spectrum slicing method and it is built on top of [PETSc](https://www.mcs.anl.gov/petsc/) and [SLEPc](http://slepc.upv.es/) libraries. 
 Thanks to improvements in the robustness and efficiency of the underlying mathematical libraries,<sup>2</sup> a later implementation of SIPs demonstrated scalability of the eigensolver beyond 200,000 cores for matrices with more than 500,000 rows.<sup>3</sup> 
 A more recent implementation of SIPs is now available in [SLEPc](http://slepc.upv.es/) package and it is integrated into a branch of [SIESTA](https://departments.icmab.es/leem/siesta/), an initio molecular dynamics package. [ELSI](https://wordpress.elsi-interchange.org/) developers also provide an interface to SIPs eigensolver and other solvers for quantum chemistry applications.<sup>5</sup> 
 
@@ -16,6 +16,5 @@ Shift-and-Invert Parallel Spectral Transformation Eigensolver: Massively Paralle
 [J. Comput. Chem. 2016, 37, 448–459. DOI=10.1002/jcc.24254](https://onlinelibrary.wiley.com/doi/abs/10.1002/jcc.24254)
 4. Keçeli M.; Corsetti F.; Campos C.; Román, J. E.; Vázquez-Mayagoitia Á;  Zhang, H.; Zapol, P.; & Wagner A, F.  
 SIESTA-SIPs: Massively parallel spectrum-slicing eigensolver for an ab initio molecular dynamics package. (under review, 2018)
-
 5. Yu, V. W.; Corsetti, F.; García, A.; Huhn, W. P.; Jacquelin, M.; Jia, W.; Lange, B.; Lin, L.; Lu, J.; Mi, W.; Seifitokaldani, A.; Vázquez-Mayagoitia, Á.; Yang, C.; Yang, H.; Blum, V.  
-ELSI: A Unified Software Interface for Kohn-Sham Electronic Structure Solvers. http://arxiv.org/abs/1705.11191 2017, 1–55.
+ELSI: A Unified Software Interface for Kohn-Sham Electronic Structure Solvers. [http://arxiv.org/abs/1705.11191 2017, 1–55.](http://arxiv.org/abs/1705.11191)
