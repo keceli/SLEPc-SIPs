@@ -5,15 +5,18 @@ Motivated by material science and quantum chemistry applications, SIPs was built
 shift-and-invert Krylov subspace implementations, respectively.
 
 In 2012, SLEPc developers Carmen Campos and Jose E. Roman created a new implementation of
-the single-communicator spectrum slicing method in SLEPc using Krylov-Schur instead of ARPACK.<sup>6</sup> In 2014, a new version of SIPs was implemented based on the new solver in SLEPc and Keçeli _et. al._ demonstrated the scalability beyond 200,000 cores for matrices with more than 500,000 rows using Argonne's Leadership supercomputers.<sup>6</sup> In this study [PT-Scotch](https://www.labri.fr/perso/pelegrin/scotch/)<sup>8</sup>
+the single-communicator spectrum slicing method in SLEPc using Krylov-Schur instead of ARPACK.<sup>6</sup> In 2014, a new version of SIPs was implemented based on the new solver in SLEPc and Keçeli _et. al._ demonstrated the scalability beyond 200,000 cores for matrices with more than 500,000 rows using Argonne's Leadership supercomputers.<sup>7</sup> In this study [PT-Scotch](https://www.labri.fr/perso/pelegrin/scotch/)<sup>8</sup>
 was used for parallel sparse matrix block ordering, which offered better strong scaling performance in symbolic factorization.
 
 In 2016, Carmen Campos and Jose. E. Roman implemented multiple-communicator spectrum-slicing method in SLEPc providing a more robust and generally applicable eigensolver with an intuitive and
-well-documented API. In collaboration with Fabiano Corsetti and SLEPc developers, M. Keçeli integrated this solver into a branch of an ab initio molecular dynamics package [SIESTA](https://departments.icmab.es/leem/siesta/).
+well-documented API. In collaboration with Fabiano Corsetti and SLEPc developers, M. Keçeli integrated this solver into a branch of an ab initio molecular dynamics package [SIESTA](https://departments.icmab.es/leem/siesta/).<sup>9</sup>
 Keçeli _et. al._ demonstrated improved performance of the spectrum slicing eigensolver (referred to as SLEPc-SIPs) compared to default ScaLAPACK eigensolver for various types of problems. In this study, new methods are implemented in this interface to improve load-balance by adjusting slice boundaries based on approximate knowledge of the eigenvalues.
 
 An interface to SLEPc spectrum slicing (SLEPc-SIPs) eigensolver has been also added to [ELSI](https://wordpress.elsi-interchange.org/) by Victor
 Yu in collaboration with Murat Keçeli. This interface allows an easier integration of the spectrum slicing eigensolver into other electronic structure codes.
+
+## Performance
+As a sparse eigensolver the performance depends on the sparsity of the matrices. Since this method requires factorization of the matrices, the sparsity of the factors are more important. Long and thin nanotubes, wires or thin slabs yields sparser matrix factors, hence the performance for the lower-dimensional (1D or 2D like) systems are better compared to bulky systems. For more details, please read references 7 and 9.
 
 
 ## How to use?
@@ -22,19 +25,19 @@ The most recent implementation of the multi-communicator spectrum slicing eigens
 
 ## Acknowledgements
 This study is based upon work supported by Laboratory Directed Research and Development (LDRD)
-funding from Argonne National Laboratory, provided by the Director, Office of Science,
+funding from Argonne National Laboratory (ANL), provided by the Director, Office of Science,
 of the U.S. Department of Energy under Contract No. DE-AC02-06CH11357.
-
-2006-2007 SIPs work was supported by an LDRD project led by Peter Zapol.
-2014-2017 SIPs work was supported by an LDRD project led by Albert F. Wagner.
+This research used resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357.
+2006-2007 SIPs work was supported by an ANL LDRD project led by Peter Zapol.
+2014-2017 SIPs work was supported by an ANL LDRD project led by Albert F. Wagner.
 The work of C. Campos and J. E. Roman was supported by the Spanish Ministry of Economy and Competitiveness under grant TIN2016-75985-P (including European Commission FEDER funds).
-
+In 2017-2018, the work of P. Zapol was supported by the U.S. Department of Energy Office of Science, Office of Basic Energy Sciences Division of Materials Science and Engineering, under Contract DE-AC02-06CH11357.
 
 ## References
 1. Zhang, H.; Smith, B.; Sternberg, M.; Zapol, P. 2007. SIPs: Shift-and-Invert Parallel Spectral Transformations.
 ACM Trans. Math. Softw., 33, 9–es.
 [DOI=10.1145/1236463.1236464](doi.org/10.1145/1236463.1236464)
-2. Balay, S., Buschelman, K., Eijkhout, V., Gropp,W., Kaushik, D., Knepley, M., Mcinnes, L.C., Smith, B., and Zhang,H. 2006. PETSc users manual. Tech. Rep. ANL 95/11—Revision 2.3.1, Argonne National Laboratory.
+2. Balay, S., Buschelman, K., Eijkhout, V., Gropp,W., Kaushik, D., Knepley, M., Mcinnes, L.C., Smith, B., and Zhang,H. 2006. PETSc users manual. Tech. Rep. ANL 95/11, Argonne National Laboratory.
 3. Hernandez, V., Roman, J. E., and Vidal, V. 2005. SLEPc: A scalable and flexible toolkit for the solution of eigenvalue problems. ACM Trans. Math.
 Softw. 31, 351-362. [DOI=10.1145/1089014.1089019](doi.org/10.1145/1089014.1089019)
 4. Amestoy, P.R.; Duff I.S.; and L’excellent, J.-Y. 2000. Multifrontal parallel distributed symmetric and unsymmetric solvers. Comput. Meth. Appl. Mech. Eng. 184, 501–520.
